@@ -74,7 +74,7 @@ if (IS_WINDOWS) {
 // root and assigns the result to $web_root. In addition to the common case where $webserver_root is
 // /var/www/openemr and document root is /var/www, this also handles the case where document root is
 // /var/www/html and there is an Apache "Alias" command that directs /openemr to /var/www/openemr.
-$web_root = substr($webserver_root, strspn($webserver_root ^ $server_document_root, "\0"));
+//$web_root = substr($webserver_root, strspn($webserver_root ^ $server_document_root, "\0"));
 // Ensure web_root starts with a path separator
 if (preg_match("/^[^\/]/", $web_root)) {
     $web_root = "/" . $web_root;
@@ -84,7 +84,7 @@ if (preg_match("/^[^\/]/", $web_root)) {
 //  real time per above code. If above is not working, can uncomment and
 //  set manually here:
 $webserver_root = "/var/www/localhost/htdocs/openemr";
-$web_root =  "openemr/";
+$web_root =  "/openemr";
 
 // Debug function. Can expand for longer trace or file info.
 function GetCallingScriptName()
