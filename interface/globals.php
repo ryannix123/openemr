@@ -83,7 +83,7 @@ if (preg_match("/^[^\/]/", $web_root)) {
 // The webserver_root and web_root are now automatically collected in
 //  real time per above code. If above is not working, can uncomment and
 //  set manually here:
-$webserver_root = "/var/www/localhost/htdocs";
+$webserver_root = "/var/www/localhost/htdocs/openemr";
 $web_root =  "/openemr";
 
 // Debug function. Can expand for longer trace or file info.
