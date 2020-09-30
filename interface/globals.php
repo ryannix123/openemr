@@ -84,7 +84,7 @@ if (preg_match("/^[^\/]/", $web_root)) {
 //  real time per above code. If above is not working, can uncomment and
 //  set manually here:
 $webserver_root = "/var/www/localhost";
-$web_root =  "/htdocs/openemr";
+$web_root =  "/openemr";
 
 // Debug function. Can expand for longer trace or file info.
 function GetCallingScriptName()
@@ -175,7 +175,7 @@ $GLOBALS['OE_SITE_DIR'] = $GLOBALS['OE_SITES_BASE'] . "/" . $_SESSION['site_id']
 // Set a site-specific uri root path.
 $GLOBALS['OE_SITE_WEBROOT'] = $web_root . "/sites/" . $_SESSION['site_id'];
 
-require_once($GLOBALS['OE_SITE_DIR'] . "/htdocs/openemr/config.php");
+require_once($GLOBALS['OE_SITE_DIR'] . "/default//config.php");
 
 // Collecting the utf8 disable flag from the sqlconf.php file in order
 // to set the correct html encoding. utf8 vs iso-8859-1. If flag is set
