@@ -173,12 +173,13 @@ if (empty($_SESSION['site_id']) || !empty($_GET['site'])) {
 $GLOBALS['OE_SITE_DIR'] = $GLOBALS['OE_SITES_BASE'] . "/" . $_SESSION['site_id'];
 
 // Set a site-specific uri root path.
-$GLOBALS['OE_SITE_WEBROOT'] = $web_root . "/sites/" . $_SESSION['site_id'];
+$GLOBALS['OE_SITE_WEBROOT'] = $web_root . "/htdocs/openemr/sites/" . $_SESSION['site_id'];
 
 require_once($GLOBALS['OE_SITE_DIR'] . "default/config.php");
 
 // /var/www/localhost/sites/defaulthtdocs/openemr/sites/default/config.php
 // /var/www/localhost/htdocs/openemr/sites/default/config.php 
+// /var/www/localhost/sites/defaultdefault/config.php
 
 // Collecting the utf8 disable flag from the sqlconf.php file in order
 // to set the correct html encoding. utf8 vs iso-8859-1. If flag is set
