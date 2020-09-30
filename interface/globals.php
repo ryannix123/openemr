@@ -83,8 +83,8 @@ if (preg_match("/^[^\/]/", $web_root)) {
 // The webserver_root and web_root are now automatically collected in
 //  real time per above code. If above is not working, can uncomment and
 //  set manually here:
-$webserver_root = "/var/www/localhost";
-$web_root =  "/openemr";
+//   $webserver_root = "/var/www/openemr";
+//   $web_root =  "/openemr";
 
 // Debug function. Can expand for longer trace or file info.
 function GetCallingScriptName()
@@ -173,13 +173,9 @@ if (empty($_SESSION['site_id']) || !empty($_GET['site'])) {
 $GLOBALS['OE_SITE_DIR'] = $GLOBALS['OE_SITES_BASE'] . "/" . $_SESSION['site_id'];
 
 // Set a site-specific uri root path.
-$GLOBALS['OE_SITE_WEBROOT'] = $web_root . "/htdocs/openemr/sites/" . $_SESSION['site_id'];
+$GLOBALS['OE_SITE_WEBROOT'] = $web_root . "/sites/" . $_SESSION['site_id'];
 
-require_once($GLOBALS['OE_SITE_DIR'] . "default/config.php");
-
-// /var/www/localhost/sites/defaulthtdocs/openemr/sites/default/config.php
-// /var/www/localhost/htdocs/openemr/sites/default/config.php 
-// /var/www/localhost/sites/defaultdefault/config.php
+require_once($GLOBALS['OE_SITE_DIR'] . "/config.php");
 
 // Collecting the utf8 disable flag from the sqlconf.php file in order
 // to set the correct html encoding. utf8 vs iso-8859-1. If flag is set
